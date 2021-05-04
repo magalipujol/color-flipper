@@ -30,7 +30,17 @@ function createRGBColorFromValues(red, green, blue) {
         color.textContent = `RGB(${redGlobal}, ${greenGlobal}, ${blueGlobal})`
     })
     
-    
+    function rgbToHex(r, g, b) {
+        return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+      }
+
+    function componentToHex(c) {
+        var hex = c.toString(16);
+        return hex.length == 1 ? "0" + hex : hex;
+      }  
+
+
+
     /*
     const colors = ["green", "red", "rgba(133,122,200)", 
     "#f15025"]; 
