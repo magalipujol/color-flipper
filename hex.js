@@ -3,9 +3,8 @@ const color = document.querySelector(".color")
 
 const hexPossibleValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"] 
 //TODO 
-let hexString = "#"
 function createRandomHexColor() {
-    hexString = "#"
+    let hexString = "#"
     for (let i = 0; i < 6; i++) {
         hexString += hexPossibleValues[getRandomNumberUpToANumber(hexPossibleValues.length - 1)]
     }
@@ -20,8 +19,9 @@ function getRandomNumberUpToANumber(biggest) {
 }
 
 btn.addEventListener("click", function (){
-    document.body.style.backgroundColor = createRandomHexColor()
-    color.textContent = hexString
+    let generatedColor = createRandomHexColor()
+    document.body.style.backgroundColor = generatedColor
+    color.textContent = generatedColor
 })
 
 
